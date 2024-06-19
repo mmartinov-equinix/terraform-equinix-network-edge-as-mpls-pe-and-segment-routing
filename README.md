@@ -5,7 +5,7 @@ Equinix Network Edge provides virtual networking services, that we picket here C
 
 <img width="468" alt="image" src="https://github.com/mmartinov-equinix/terraform-equinix-network-edge-as-mpls-pe-and-segment-routing/assets/132877286/319d4cf3-f7a3-4fbb-aea1-9972218a9140">
 
-End goal is to create infrastructure and configurations with single command. Segment Routing TE tunnels used to demonstrate how traffic is traffic between R1 and R3 is used to steer to use preferred non-optimal path. As a result, VRF communication also will follow the same path!
+End goal is to create infrastructure and configurations with single command. Segment Routing TE tunnels used to demonstrate how traffic is traffic between R1 and R3 is used to steer to use preferred non-optimal path. Hence, VRF communication also will follow the same path!
 
 ### Disclaimer: 
    * This is an Experimental practice, and it is created for testing MPLS and SR capabilities in Equinix Network Edge with Cisco 8000v.
