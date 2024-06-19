@@ -7,3 +7,4 @@ router_name_prefix = "martin-tf-sr-Test"
 ssh_username  = "your SSH Username_in Equinix Fabric Portal"
 ssh_keyname   = "your SSH Key name in Equinix Fabric Portal"
 notification_mail_list  = ["mail address 1", "mail address 3"]
+acl_template_uuid       = "your ACLs UUID here"
