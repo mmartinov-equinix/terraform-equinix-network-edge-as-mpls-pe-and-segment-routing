@@ -24,5 +24,5 @@ resource "equinix_network_device" "c8kv-router" {
   }
 
   # assuming you already have ACL created in Fabric portal.
-  acl_template_id = "4eca5500-8d12-4259-89de-00a22ecbee2f" 
+  acl_template_id = var.acl_template_uuid 
 }
