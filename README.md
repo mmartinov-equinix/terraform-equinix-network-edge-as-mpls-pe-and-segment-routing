@@ -1,17 +1,17 @@
 Readme
 # Equinix Network Edge as MPLS PE router (and Segment Routing TE)
 
-Equinix Network Edge provides virtual networking services, that we picket here Cisco 8000v to be used as MPLS PE router. This is just one model of consuming Network Edge devices, in which here I will show MPLS/Segment Routing configurations. In this example there is not any interconnection to existing MPLS Backbone, but of course it will be needed in production scenario, and configurations will be the similar. This scenario is useful to extend customer VRFs throughout the edge of cloud, and thanks to multiple VRFs which may help customers to be segregated from each other.
+Equinix Network Edge offers virtual networking services. In this specific case, we’re using the Cisco 8000v as an MPLS PE router. While this represents just one way to utilize Network Edge devices, I’ll focus on demonstrating MPLS/Segment Routing configurations. Keep in mind that in a production environment, interconnection with an existing MPLS Backbone would be necessary, and the configurations would be similar. This scenario is valuable for extending customer VRFs across the cloud edge, allowing for effective segregation between different customers.
 
 <img width="468" alt="image" src="https://github.com/mmartinov-equinix/terraform-equinix-network-edge-as-mpls-pe-and-segment-routing/assets/132877286/319d4cf3-f7a3-4fbb-aea1-9972218a9140">
 
-End goal is to create infrastructure and configurations with single command. Segment Routing TE tunnels used to demonstrate how traffic is traffic between R1 and R3 is used to steer to use preferred non-optimal path. Hence, VRF communication also will follow the same path!
+Our ultimate objective is to establish infrastructure and configurations using a single command. We employ Segment Routing TE tunnels to illustrate how traffic between R1 and R3 can be directed along a preferred non-optimal path. Consequently, VRF communication will also follow this same route.
 
 ### Disclaimer: 
-   * This is an Experimental practice, and it is created for testing MPLS and SR capabilities in Equinix Network Edge with Cisco 8000v.
-   * It is an example config and may need to be adjusted for each network.
-   * To create will cost you. If you still need want to test for free, check for Equinix Network Edge Free Tier, which is limited with only 2 Network Edge devices, so you will need to shrink/adjust this code.
-   * This repo may help you to create infrastructure and configure devices on single command, but this may not fit into production workflows.
+   * This configuration is experimental, designed for testing MPLS and SR capabilities in Equinix Network Edge with Cisco 8000v.
+   * It serves as an example config and may require adjustments for specific networks.
+   * Keep in mind that creating this setup will incur costs. If you prefer to test for free, explore Equinix Network Edge Free Tier, which allows only 2 Network Edge devices. You’ll need to adjust this code accordingly.
+   * While this repository simplifies infrastructure creation and device configuration, it may not align with production workflows.
 
 ### Requirements:
    * Terraform up and running (Installation how to -> https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -31,7 +31,7 @@ terraform apply
 ### How to check:
    * Use Equinix Fabric GUI or Terraform outputs to monitor all components status.
    * Cisco 8000v configuration status checks:
-      * Status check: R1 & R3
+      * Status check: for R1 & R3
         ```
          * show isis neighbors                                                   # Check and ensure ISIS neighbors are up and running
          * show ip bgp vpnv4 all summary                                         # Check and ensure MPBGP neighbors are up and running
@@ -41,7 +41,7 @@ terraform apply
          * traceroute 10.0.0.3                                                   # traceroute the path to verify it is using SRTE path (for R3 desr IP is 10.0.0.1)
          * ping vrf VRF_A 10.2.0.3                                               # Ping to verify desination VRF is reachable via SRTE path (for R3 desr IP is 10.2.0.1)
         ```
-      * Status check: R2
+      * Status check: for R2
         ```
          * show isis neighbors                                                   # Check and ensure ISIS neighbors are up and running
         ```
