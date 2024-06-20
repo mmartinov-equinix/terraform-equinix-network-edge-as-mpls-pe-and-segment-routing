@@ -9,12 +9,12 @@ variable "client_secret" {
 }
 
 variable "metro_code" {
-  description = "Equinix Metro Code."
+  description = "Equinix 2 letter Metro Code."
   type        = string
 }
 
 variable "metro_name" {
-  description = "Billing account name String used to specify Billing account."
+  description = "Billing account name in string format used to specify Billing account."
   type        = string
 }
 
@@ -29,12 +29,12 @@ variable "router_name_prefix" {
 }
 
 variable "ssh_username" {
-  description = "Username used to SSH devices. SSH Key is assumed to be in Equinix Fabric portal already!"
+  description = "Username used to SSH devices. SSH Key is assumed to be already in Equinix Fabric portal!"
   type        = string
 }
 
 variable "ssh_keyname" {
-  description = "The name of SSH key used to SSH devices. SSH Key is assumed to be in Equinix Fabric portal already!"
+  description = "The name of SSH key used to SSH devices. SSH Key is assumed to be already in Equinix Fabric portal."
   type        = string
 }
 
@@ -44,7 +44,7 @@ variable "notification_mail_list" {
 }
 
 variable "acl_template_uuid" {
-  description = "UUID of your ACLs in Equinix Fabric Portal!"
+  description = "UUID of your ACLs in Equinix Fabric Portal! Assuming it is already created."
   type        = string
 }
 
