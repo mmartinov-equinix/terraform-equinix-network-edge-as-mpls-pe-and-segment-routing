@@ -21,6 +21,7 @@ Our ultimate objective is to establish infrastructure and configurations using a
    * Fabric Portal User (How to create one -> https://docs.equinix.com/en-us/Content/Interconnection/Fabric/getting-started/Fabric-New-user-creation.htm)
    * For Terraform authentication use Equinix Fabric Client ID and Client Secret (ho to create -> https://developer.equinix.com/dev-docs/fabric/getting-started/getting-access-token)
    * Modify “terraform.tfvars” according to your values
+   * Modify SSH username and SSH Key location in Python script "router-command-run.py".
 
 ### How to Deploy:
 ```
